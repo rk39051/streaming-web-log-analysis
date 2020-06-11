@@ -1,15 +1,7 @@
-The objective of this project is to analyze web traffic and find 404 error from the web server log in real time.
-In this small  project, i have built streaming data pipeline by integrating Flume, Kafka, Spark and deployed it to Hadoop cluster.
-
-Web server log analysis can be helpful in finding visitors behavior and bugs in website. It helps in making future business decision to increase sells and profit.
-
-
-
-#LETS SET UP CLUSTER
-
 #static ip setup
 Go to  /etc/netplan/ 
 #default
+
 network:
   version: 2
   renderer: NetworkManager
@@ -28,6 +20,7 @@ network:
         addresses: [8.8.4.4,8.8.8.8]
 
 
+
 1. Install Java
 a)download jdk 1.8 tar file from https://www.oracle.com/technetwork/java/javase/downloads/index.html
 extract it and rename extracted folder to java.
@@ -37,10 +30,8 @@ b)update .bashrc file
 export JAVA_HOME=/usr/local/java
 export PATH=$PATH:$JAVA_HOME/bin
 
-
-
-
 2.SET UP HADOOP MULTINODE CLUSTER
+
 
 a.Map the nodes
 192.168.5.137 hadoop-master
@@ -153,10 +144,6 @@ configuration>
         <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME                                </value>                                                                                                                                   </property>
 </configuration>
 
-
-
-
-
 3.Setup Kafka Cluster
 a)download tar file from https://kafka.apache.org/downloads extract it and rename extracted folder to kafka.
 
@@ -191,10 +178,6 @@ min.insync.replicas=2
 * properties to be added in zookeeper.properties
 dataDir=/home/rupesh/zookeeper/logs/
 
-
-
-
-
 4.Install Spark
 a)download tar file from https://spark.apache.org/downloads.html extract it and rename extracted folder to spark.
 
@@ -217,9 +200,6 @@ export PATH=$PATH:$SPARK_HOME/bin
 export PATH=$PATH:$SPARK_HOME/conf
 export PATH=$PATH:$SPARK_HOME/sbin
 
-
-
-
 5.set up flume on hadoop-master node
 
 a)download tar file from https://flume.apache.org/download.html extract it and rename extracted folder to flume.
@@ -230,16 +210,9 @@ export FLUME_HOME=/usr/local/flume
 export PATH=$PATH:$FLUME_HOME/bin
 export PATH=$PATH:$FLUME_HOME/conf
 
-
-
-
 6.set up log generator 
 a)visit https://github.com/dgadiraju/gen_logs and folllow instruction.
 b)update .bashrc file
 #GEN_LOGS ENVIORENMENT
 export GEN_LOGS=/opt/gen_logs
 export PATH=$PATH:$GEN_LOGS
-
-
-
-
