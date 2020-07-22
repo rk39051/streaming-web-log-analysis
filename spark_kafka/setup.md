@@ -1,3 +1,5 @@
+#SET UP HADOOP CLUSTER
+
 #static ip setup
 Go to  /etc/netplan/ 
 #default
